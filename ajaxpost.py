@@ -1,4 +1,4 @@
-#!/u/p/r/pradap/miniconda/bin/python
+#!/usr/bin/python2.7
 import sys
 import json
 import cgi

@@ -1,4 +1,4 @@
-#!/u/p/r/pradap/miniconda/bin/python
+#!/usr/bin/python2.7
 import pandas as pd
 import json
 import os
