@@ -1,4 +1,4 @@
-#!/usr/bin/python2.7
+#!/usr/bin/env python
 import logging
 logging.basicConfig(filename='log-mur.txt',
                             filemode='a',
