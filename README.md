@@ -8,7 +8,7 @@ The web-page to label drug pairs can be reached at [pradap-www.cs.wisc.edu/mfc_w
 # Page Contents
 Once the user goes to the labeling page URL from the web browser, he/she will displayed a page like this
 
-![Page Contents](https://github.com/slamphear/distributed-labeling/images/page_contents.png)
+![Page Contents](https://github.com/slamphear/distributed-labeling/raw/master/images/page_contents.png)
 
 The page contains three panels:
 * Main label panel
@@ -23,7 +23,7 @@ Save the labels
 
 A blown up main label panel is shown below
 
-![Main Label Panel](https://github.com/slamphear/distributed-labeling/images/main_label_panel.png)
+![Main Label Panel](https://github.com/slamphear/distributed-labeling/raw/master/images/main_label_panel.png)
 
 The panel primarily contains a table with drug pair information, labeling options and option to save.
 
@@ -33,7 +33,7 @@ The user can periodically save the labels by clicking on ‘Save and Continue’
 
 Note: Each page displays only a maximum of 20 rows. The user can move to subsequent pages by scrolling down the page and clicking on the next button as shown below
 
-![Previous and Next Buttons](https://github.com/slamphear/distributed-labeling/images/previous_and_next_buttons.png)
+![Previous and Next Buttons](https://github.com/slamphear/distributed-labeling/raw/master/images/previous_and_next_buttons.png)
 
 Further, the displayed table is both horizontally and vertically scrollable. The horizontal scroll bar is at the bottom of the page
  
@@ -41,7 +41,7 @@ Further, the displayed table is both horizontally and vertically scrollable. The
 This panel shows a summary counts of different label types saved. Note that, this panel gets updated only when the user saves the labels by clicking on ‘Save and Continue’ button.
 An example screenshot is shown below:
 
-![Summary Label Panel](https://github.com/slamphear/distributed-labeling/images/summary_label_panel.png)
+![Summary Label Panel](https://github.com/slamphear/distributed-labeling/raw/master/images/summary_label_panel.png)
 
 ## Filter Label Panel
 The panels helps the user to select a subset of label types and view or re-label them in the main panel. The user can select multiple label types. 
