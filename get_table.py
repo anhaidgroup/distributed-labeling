@@ -1,9 +1,10 @@
-#!/usr/bin/env python
+#!/home/slamphear/miniconda2/bin/python
 import cgi
 import sys
 import model as md
 import json
 import os
+
 sql_path=os.path.join(os.path.dirname(__file__), 'data/data.sqlite')
 # -----------
 # boiler plate

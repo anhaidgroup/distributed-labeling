@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/home/slamphear/miniconda2/bin/python
 import logging
 logging.basicConfig(filename='log-mur.txt',
                             filemode='a',

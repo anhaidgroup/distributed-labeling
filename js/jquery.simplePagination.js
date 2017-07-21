@@ -43,6 +43,7 @@
 			bPrevious.style.marginRight = '8px';
 			bNext.style.marginLeft = '8px';
 			container.style.textAlign = "center";
+			container.style.marginTop = '20px';
 			container.style.marginBottom = '20px';
 
 			container.appendChild(bPrevious);
@@ -88,8 +89,8 @@
 
 				$rows.slice((from-1), to).show();
 
-				of.innerHTML = Math.ceil(from/settings.rowMultiple) + ' to ' + Math.ceil(to/settings.rowMultiple) +
-                    ' of ' + Math.ceil($rows.length/settings.rowMultiple) + ' entries';
+				of.innerHTML = 'Showing tuple pairs ' + Math.ceil(from/settings.rowMultiple) + ' to ' +
+					Math.ceil(to/settings.rowMultiple) + ' (of ' + Math.ceil($rows.length/settings.rowMultiple) + ')';
 
 				if ($rows.length <= settings.perPage) {
 					$(container).hide();

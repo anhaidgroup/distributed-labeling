@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/home/slamphear/miniconda2/bin/python
 #
 # A simple Python script to convert csv files to sqlite (with type guessing)
 #

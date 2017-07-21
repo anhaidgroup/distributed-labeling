@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/home/slamphear/miniconda2/bin/python
 import sys
 import json
 import cgi
@@ -13,7 +13,7 @@ sys.stdout.write("\n")
 
 result = {}
 result['success'] = True
-result['message'] = "The command Completed Successfully"
+result['message'] = "The command completed Successfully"
 result['keys'] = ",".join(fs.keys())
 
 d = {}

@@ -1,11 +1,9 @@
-#!/usr/bin/env python
+#!/home/slamphear/miniconda2/bin/python
 import pandas as pd
 import json
 import os
 import sqlite3
 from pandas.io import sql
-
-
 
 sql_path = os.path.join(os.path.dirname(__file__), 'data/data.sqlite')
 table_name = 'mfc_label'
@@ -30,6 +28,7 @@ def read_data(filename = sql_path, filter_label_str=None, l_prefix='ltable.', r_
     d['label'] = label_col
     d['ltable'] = ltable
     d['rtable'] = rtable
+    #return json.dumps(json.dumps(d))
     return json.dumps(d)
 
 

@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/home/slamphear/miniconda2/bin/python
 import cgi
 import sys
 import model as md
