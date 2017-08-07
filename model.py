@@ -4,8 +4,16 @@ import json
 import os
 import sqlite3
 from pandas.io import sql
+import ConfigParser
 
-sql_path = os.path.join(os.path.dirname(__file__), 'data/data.sqlite')
+config = ConfigParser.RawConfigParser()
+config.read('distributed-labeling.cfg')
+sqlite_db_path = config.get('Data', 'sqlite_db_path')
+if sqlite_db_path.startswith('/'):
+    sql_path = sqlite_db_path
+else:
+    sql_path = os.path.join(os.path.dirname(__file__), sqlite_db_path)
+
 table_name = 'mfc_label'
 
 def read_data(filename = sql_path, filter_label_str=None, l_prefix='ltable.', r_prefix='rtable.',

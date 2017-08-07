@@ -5,16 +5,23 @@ import model as md
 import json
 import datetime
 import os
-
 import logging
+import ConfigParser
+
 #logging.basicConfig(filename='log-mur.txt',
 #                            filemode='a',
 #                            format='%(asctime)s,%(msecs)d %(name)s %(levelname)s %(message)s',
 #                            datefmt='%H:%M:%S',
 #                            level=logging.DEBUG)
 
+config = ConfigParser.RawConfigParser()
+config.read('distributed-labeling.cfg')
+sqlite_db_path = config.get('Data', 'sqlite_db_path')
+if sqlite_db_path.startswith('/'):
+	sql_path = sqlite_db_path
+else:
+	sql_path = os.path.join(os.path.dirname(__file__), sqlite_db_path)
 
-sql_path=os.path.join(os.path.dirname(__file__), 'data/data.sqlite')
 # -----------
 # boiler plate
 # -----------

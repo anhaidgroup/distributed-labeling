@@ -4,8 +4,16 @@ import sys
 import model as md
 import json
 import os
+import ConfigParser
 
-sql_path=os.path.join(os.path.dirname(__file__), 'data/data.sqlite')
+config = ConfigParser.RawConfigParser()
+config.read('distributed-labeling.cfg')
+sqlite_db_path = config.get('Data', 'sqlite_db_path')
+if sqlite_db_path.startswith('/'):
+	sql_path = sqlite_db_path
+else:
+	sql_path = os.path.join(os.path.dirname(__file__), sqlite_db_path)
+
 # -----------
 # boiler plate
 # -----------
