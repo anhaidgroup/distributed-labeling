@@ -14,12 +14,12 @@ if sqlite_db_path.startswith('/'):
 else:
     sql_path = os.path.join(os.path.dirname(__file__), sqlite_db_path)
 
-table_name = 'mfc_label'
+table_name = config.get('Data', 'table_name')
 
 def read_data(filename = sql_path, filter_label_str=None, l_prefix='ltable.', r_prefix='rtable.',
               id_col='_id', label_col='Label'):
     cnx = sqlite3.connect(sql_path)
-    data = pd.read_sql('select * from mfc_label', con=cnx)
+    data = pd.read_sql('select * from ' + table_name, con=cnx)
     #data = pd.read_csv(filename)
     if filter_label_str != None:
         filter_label_list = _parse_label_types(filter_label_str)
@@ -43,12 +43,12 @@ def read_data(filename = sql_path, filter_label_str=None, l_prefix='ltable.', r_
 def save_data(label_str, filename=sql_path, lid_col='ltable.DRUG_ID',
               rid_col='rtable.DRUG_ID', label_col='Label'):
     cnx = sqlite3.connect(sql_path)
-    data = pd.read_sql('select * from mfc_label', con=cnx)
+    data = pd.read_sql('select * from ' + table_name, con=cnx)
     ids_chopped = _parse_label_str(label_str)
     data = _update_tbl_labels(data, ids_chopped)
 
     #data.to_csv(sql_path, index=False)
-    sql.to_sql(data, name='mfc_label', con=cnx, index=False, index_label='_id', if_exists='replace')
+    sql.to_sql(data, name=table_name, con=cnx, index=False, index_label='_id', if_exists='replace')
     #name=table_name, con=cnx, index=False, index_label='_id', if_exists='replace'
 
 
@@ -121,7 +121,7 @@ def get_summary(filename=sql_path):
     dlist = []
     # data = pd.read_csv(filename)
     cnx = sqlite3.connect(sql_path)
-    data = pd.read_sql('select * from mfc_label', con=cnx)
+    data = pd.read_sql('select * from ' + table_name, con=cnx)
 
     v = data.Label.values
     label_list = ['Unlabeled', 'User-Yes', 'User-No',
