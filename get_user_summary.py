@@ -13,7 +13,7 @@ sys.stdout.write("\n")
 sys.stdout.write("\n")
 # -----------
 
-l = md.get_summary()
+l = md.get_summary(expert_mode=False)
 result = json.dumps(l, indent=1)
 # -----------
 # boiler plate

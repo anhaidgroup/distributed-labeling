@@ -117,15 +117,18 @@ def replace_char(cols, old, new, exp_list):
     return cols
 
 
-def get_summary(filename=sql_path):
+def get_summary(filename=sql_path, expert_mode=True):
     dlist = []
     # data = pd.read_csv(filename)
     cnx = sqlite3.connect(sql_path)
     data = pd.read_sql('select * from ' + table_name, con=cnx)
 
     v = data.Label.values
-    label_list = ['Unlabeled', 'User-Yes', 'User-No',
-                  'User-Unsure', 'Expert-Yes', 'Expert-No', 'Expert-Unsure']
+    if (expert_mode):
+        label_list = ['Unlabeled', 'User-Yes', 'User-No', 'User-Unsure',
+                      'Expert-Yes', 'Expert-No', 'Expert-Unsure']
+    else:
+        label_list = ['Unlabeled', 'User-Yes', 'User-No', 'User-Unsure']
     for i in range(0, len(label_list)):
         cnt = sum(v == i)
         d = {}

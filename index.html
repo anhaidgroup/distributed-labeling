@@ -11,84 +11,16 @@
     <script src="js/jquery.simplePagination.js"></script>
 </head>
 <body>
-
 <div class="container-fluid">
     <div class="row">
-        <div class="col-xs-2">
-            <div class="panel panel-info">
-                <div class="panel-heading"><b>Label Summary</b>
-
-                    <div class="clearfix"></div>
-                </div>
-                <table id='records_table' class="table table-bordered">
-                </table>
-            </div>
-            <div class="panel panel-info">
-                <div class="panel-heading"> <b>Label Filters</b></div>
-                <div class="panel-body">
-
-                    <div id="view_label_types">
-                        <div>
-                            <input type="checkbox" name="option-1" id="0"> <label for="option-1">Unlabeled</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="option-2" id="1"> <label for="option-2">User-Yes</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="option-3" id="2"> <label for="option-3">User-No</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="option-4" id="3"> <label for="option-4">User-Unsure</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="option-5" id="4"> <label for="option-5">Expert-Yes</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="option-6" id="5"> <label for="option-6">Expert-No</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" name="option-7" id="6"> <label for="option-7">Expert-Unsure</label>
-                        </div>
-
-
-                        <div>
-                            <button type="button" id="view_lt_button" data-loading-text="Loading..."
-                                    class="btn btn-sm btn-primary pull-right">Apply Filters
-                            </button>
-
-                        </div>
-                    </div>
-
-
-                </div>
-
-
-            </div>
-
-        </div>
         <div class="col-xs-10">
-
-
             <div class="panel panel-info">
-                <div class="panel-heading"><b>Tuple Pairs</b>
-
-                    <span id="message" style="margin-left:100px;text-align: center; color:red;"> </span>
-                    <button type="button" id="save_table_button" data-loading-text="Loading.."
-                            class="btn btn-sm btn-primary pull-right">Save and Continue
-                    </button>
-                    <div class="clearfix"></div>
-                </div>
-                <div class="table-responsive table table-sm">
-                    <table id="data_table" style="overflow: scroll" class="table table-bordered" width="100%">
-
-                    </table>
+                <div class="panel-heading"><b>Are you an expert in this area?</b>
+                    <a href="user.html"><button type="button" id="user_button" class="btn btn-sm btn-primary">No</button></a>
+                    <a href="expert.html"><button type="button" id="expert_button" class="btn btn-sm btn-primary">Yes</button></a>
                 </div>
             </div>
-
         </div>
-        <div id="table-model-contents">
-        </div>
-
     </div>
 </div>
 </body>

@@ -2,6 +2,15 @@
  * distributed-labeling.js
  * Library of JavaScript functions for distributed labeling.
  */
+var expert_mode;
+
+$('#user_button').click(function () {
+    expert_mode = false;
+});
+
+$('#expert_button').click(function () {
+    expert_mode = true;
+});
 
 $('#save_table_button').click(function () {
     var strSelectedLabels = "";
@@ -85,7 +94,7 @@ function js_save_table_fn() {
 }
 function js_get_summary_fn() {
     $.ajax({
-        url: 'get_summary.py',
+        url: 'get_expert_summary.py',
         type: 'GET',
         success: function (results) {
             results = jQuery.parseJSON(results);
@@ -168,8 +177,13 @@ function fill_table_data(result) {
     //{#            alert(thHtml);#}
     var tbHtml = '<tbody>';
     //{# fill rows #}
-    var labels = ['Unlabeled', 'User-Yes', 'User-No', 'User-Unsure',
+    if (expert_mode) {
+        var labels = ['Unlabeled', 'User-Yes', 'User-No', 'User-Unsure',
         'Expert-Yes', 'Expert-No', 'Expert-Unsure'];
+    } else {
+        var labels = ['Unlabeled', 'User-Yes', 'User-No', 'User-Unsure'];
+    }
+
     for (i = 0; i < results.ltable.length; i++) {
         lrow = results.ltable[i];
         rrow = results.rtable[i];
